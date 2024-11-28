@@ -27,7 +27,7 @@
             <div class="logo">AstroMath</div>
             
             <div class="options login">
-                <img src="../resources/add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle-svgrepo-com.svg" alt="sign-in-register-svgrepo-com">
+                <img src="{% static 'images/add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle-svgrepo-com.svg' %}" alt="sign-in-register-svgrepo-com">
                 {% if user.is_authenticated %}
                     <a href="{% url 'Logout' %}">Cerrar Sesion</a> 
                 {% else %}
@@ -189,7 +189,8 @@
 </footer>
     <script src="{% static 'index/index.js' %}"></script>
     <script>
-        fetch('/static/index/particlesjs-config.json')
+        const urlParticles = "{% static 'index/particlesjs-config.json' %}"
+        fetch(urlParticles)
           .then((response) => {
             if (!response.ok) {
               throw new Error(`Error al cargar JSON: ${response.statusText}`);
