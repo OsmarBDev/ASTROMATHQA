@@ -8,7 +8,9 @@ html{
     font-size: 20px;
 }
 
-
+.form-group input{
+  color: white;
+  }
 /*PARTICULAS*/
 
 body {
