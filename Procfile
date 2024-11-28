@@ -1,1 +1,1 @@
-web: gunicorn AstroMath.wsgi
+web: python manage.py collectstatic && gunicorn AstroMath.wsgi
