@@ -5,7 +5,7 @@ let puntajes = [];
 
 async function fetchData() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/Api/getInfoEstudiantes/', {
+        const response = await fetch('https://web-production-a3a36.up.railway.app/Api/getInfoEstudiantes/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

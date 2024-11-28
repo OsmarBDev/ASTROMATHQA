@@ -138,7 +138,7 @@ nivelCuadros.forEach((cuadro, index) => {
 
 
 const getInfoEjercicio = async (idEjercicio) => {
-  const url = `http://127.0.0.1:8000/Api/getInfo/${idEjercicio}/`; // Asegúrate de que coincide con tu configuración de URLs.
+  const url = `https://web-production-a3a36.up.railway.app/Api/getInfo/${idEjercicio}/`; // Asegúrate de que coincide con tu configuración de URLs.
   try {
       const response = await fetch(url, {
           method: 'GET',

@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //CONSUMO DE LA API
     async function sendInfoEjercicio(idEjercicio, estrellas, tiempo) {
-        const url = 'http://127.0.0.1:8000/Api/addInfo/'; // Reemplaza con la URL real de tu API
+        const url = 'https://web-production-a3a36.up.railway.app/Api/addInfo/'; // Reemplaza con la URL real de tu API
         const data = {
             id_ejercicio: numeroNivel, // ID del ejercicio que se quiere registrar
             estrellas: estrellas,      // Cantidad de estrellas (de 1 a 5)
