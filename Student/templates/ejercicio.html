@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ejercicio-sumas/ejercicio.css' %}">
+    <title>Document</title>
+</head>
+<body class="body">
+    <div id="particles-js">
+        
+    </div>
+    <main class="principal-container">
+        <div class="header">
+            <div class="question-counter">1/5</div>
+            <div class="exit-button">X</div>
+        </div>
+        <div class="question" id="question"></div>
+        <div class="answers" id="answers">
+            <div class="option" id="option1"></div>
+            <div class="option" id="option2"></div>
+            <div class="option" id="option3"></div>
+            <div class="option" id="option4"></div>
+        </div>
+        
+        <section class="drag-drop-section">
+            <div class="middle-container">
+                <div class="instructions-container">
+                    <h1 class="title-instruction">COMPLETA LA CANTIDAD</h1>
+                    <p class="instructions">
+                        <br><br><br>Introduce los misiles<br><br>
+                    </p>
+                </div>
+                <h3 class="apples-to-put">5</h3>
+                <button class="next-problem">Aceptar</button>
+            </div>
+            
+            
+            <div class="bottom-container">
+                <div class="left-container">
+                    <img src="{% static 'images/contenedor-misiles.png' %}" alt="Contenedor de misiles" class="basket">
+                </div>
+                <div class="right-container">
+                    <div class="drop-area"></div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <div id="confirm-exit" style="display: none;" class="exit-confirmation">
+        <p>¿Quieres salir del nivel?</p>
+        <div class="confirmation-buttons">
+            <button class="option-button" id="exit-confirmed">Salir</button>
+            <button class="option-button" id="continue-level">Continuar</button>
+        </div>
+    </div>
+</body>
+<script>
+    const pantallaMundos = "{% url 'Student:Mundos' %}"
+</script>
+<script>
+    const imageUrl = "{% static 'images/misil.png' %}";
+</script>
+<script src="{% static 'ejercicio-sumas/particles.min.js' %}"></script>
+<script src="{% static 'ejercicio-sumas/particlesjs-config.json' %}"></script>
+
+<script src="{% static 'ejercicio-sumas/ejercicio.js' %}"></script>
+</html>

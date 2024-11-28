@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'informacion.css' %}">
+    <link rel="icon" href="../images/AstroMath.png">
+    <title>AstroMath</title>
+</head>
+<body>
+    <main class="principal-container">
+        <nav class="navbar">
+            <div class="logo">AstroMath</div>
+            <div class="options login">
+                <img src="../resources/add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle-svgrepo-com.svg" 
+                     alt="Icono de inicio de sesión y registro">
+                <a href="{% url 'Logout' %}" aria-label="Volver al inicio">Volver</a>
+            </div>
+        </nav>
+        <section class="table-container">
+        </section>
+    </main>
+    
+    <script src="{% static 'informacion.js'%}"></script>
+</body>
+</html>

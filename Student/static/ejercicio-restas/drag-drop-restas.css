@@ -1,0 +1,146 @@
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 500px;
+}
+.drag-drop-section {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.drag-drop-title {
+    font-size: 124px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.drag-drop-equation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.drop-box {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #ccc;
+    border-radius: 8px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.operator {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 300px;
+    color: white;
+    user-select: none;
+}
+
+/* Estilos para la cesta */
+
+
+.basket-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+
+.manzana {
+    width: 50px; /* Ajusta el tamaño según lo necesites */
+    height: 80px;
+    margin: 2px;
+    user-select: none;
+}
+.basket{
+    width: 200px;
+}
+.drop-area{
+    width: 400px; /* Ajusta según sea necesario */
+    height: 400px;
+}
+.cesta {
+    width: 200px; /* Ajusta según sea necesario */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.cesta img {
+    width: 4px;
+    height: auto;
+}
+
+@media (max-width:1400px){
+    .drag-drop-title{
+        font-size: 70px;
+    }
+    .operator{
+        font-size: 200px;
+    }
+    .drop-box{
+        width: 200px;
+        height: 200px;
+    }
+    .manzana{
+        width: 30px;
+        height: 40px;
+    }
+    .drop-area{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width:500px){
+    .title{
+        flex-direction: row;
+        height: 100px;
+        width: 100vw;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+    .drag-drop-equation{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+    .drag-drop-title{
+        font-size: 30px;
+        font-weight: 100;
+    }
+    .operator{
+        font-size: 70px;
+    }
+    .operator:nth-child(4){
+        display: none;
+    }
+    .drop-box{
+        width: 130px;
+        height: 140px;
+        border: 1px solid white;
+    }
+    .manzana{
+        width: 20px;
+        height: 30px;
+    }
+    .basket{
+        width: 100px;
+    }
+    .drop-area{
+        width: 200px;
+        height: 150px;
+        border: 1px dashed white;
+    }
+}

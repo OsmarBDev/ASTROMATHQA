@@ -1,0 +1,497 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Kanit", sans-serif;
+}
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#particles-js {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh; 
+    background-color: #000;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+.principal-container {
+    padding-top: 5em; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ca5774;
+    z-index: 1000; 
+}
+
+.navbar .logo {
+    flex: 1;
+    font-size: 40px;
+    user-select: none;
+    color: white;
+}
+.navbar .options{
+    margin: 0 25px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .8s ease;
+    color: #ffffff;
+}
+.navbar .options:hover {
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+}
+.register, .login{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.register img, .login img{
+    width: 35px;
+    height: auto;
+    display: none;
+}
+
+
+.pregunta{
+    font-size: 5rem;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.section-info-mundos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+}
+.section-info-mundos h2{
+    font-size: 3rem;
+    color: #08D9D6;
+    margin: 80px 0;
+}
+.imagenes-planetas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.imagenes-planetas img{
+    width: 500px;
+    height: 500px;
+    user-select: none;
+}
+
+.imagenes-puntajes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.imagenes-puntajes img{
+    width: 900px;
+    height: 500px;
+    user-select: none;
+}
+.imagenes-puntajes img{
+    border: 2px solid rgb(0, 0, 0);
+}
+.imagenes-planetas img:nth-child(1){
+    border-radius: 50px 0 0 50px;
+}
+.imagenes-planetas img:nth-child(3){
+    border-radius: 0 50px 50px 0;
+}
+
+.section-start {
+    width: 100%;
+    height: 840px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.nombre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+.nombre img{
+    width: 400px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    transition: all.3s ease;
+}
+@media (max-width:450px){
+    .nombre img{
+        width: 80vw;
+    }
+}
+.mas-info{
+    color: white;
+    margin-top: 30px;
+    user-select: none;
+}
+.section-start button {
+    height: 100px;
+    width: 250px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: #ca5774;
+    font-weight: bold;
+    transition: all .5s ease;
+    border: none;
+}
+.section-start button:hover {
+    background-color: #d11242;
+    color: #fefefe;
+}
+
+.section-information {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    padding: 0 200px;
+}
+.paragraph {
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    overflow-x: hidden;
+    color: white;
+}
+.information-prueba-principal {
+    background-image: url(../images/prueba-principal.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 55%;
+    height: auto;
+    overflow-x: hidden;
+    border-radius: 50px;
+}
+.information-prueba-sumas {
+    background-image: url(../images/prueba-sumas.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 50%;
+    height: 800px;
+    background-color: #000000;
+    height: auto;
+    overflow-x: hidden;
+    border-radius: 50px;
+}
+.information-prueba-restas {
+    background-image: url(../images/prueba-restas.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 50%;
+    background-color: #000000;
+    height: auto;
+    overflow-x: hidden;
+    border-radius: 50px;
+    margin: 20px 0;
+}
+.information-prueba-principal-multiplicaciones {
+    background-image: url(../images/prueba-principal-multiplicaciones.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 50%;
+    background-color: #000000;
+    height: auto;
+    overflow-x: hidden;
+    border-radius: 50px;
+    margin: 20px 0;
+}
+.information-prueba-multiplicaciones {
+    background-image: url(../images/prueba-multiplicaciones.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    width: 50%;
+    background-color: #000000;
+    height: auto;
+    overflow-x: hidden;
+    border-radius: 50px;
+    margin: 20px 0;
+}
+.paragraph h2 {
+    font-size: 55px;
+    line-height: 70px;
+    text-align: center;
+    color: #08D9D6;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.paragraph p {
+    font-size: 16px;
+    color: white;
+    margin: 25px 0 45px 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+.button-information {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #3e6b5c;
+    color: #f9fafc;
+    text-transform: uppercase;
+}
+.button-information:hover {
+    background-color: #75ccaf;
+}
+
+
+@media (max-width:420px) {
+    .navbar{
+        display:flex;
+    }
+    .navbar .logo{
+        font-size: 30px;
+        flex: 1;
+    }
+    .navbar p{
+        display: none;
+    }
+    .navbar img{
+        display: flex;
+        
+    }
+}
+@media (max-width:1500px) {
+    body{
+        overflow-x: hidden;
+    }
+    .navbar{
+        overflow-x: hidden;
+    }
+    .principal-container,section{
+        overflow-x: hidden;
+    }
+    .section-start{
+        width: 100vw;
+    }
+    .nombre,.pregunta{
+        text-align: center;
+        font-size: 100px;
+    }
+    h2{
+        text-align: center;
+    }
+    .pregunta{
+        text-align: center;
+    }
+    .imagenes-planetas{
+        flex-direction: column;
+    }
+    .section-information{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        
+    }
+    .paragraph{
+        padding: 20px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .paragraph h2{
+        text-align: center;
+    }
+    .paragraph p{
+        text-align: center;
+    }
+    .information{
+        height: 200px;
+        width: 90%;
+    }
+    .imagenes-puntajes img{
+        width: 100%;
+        height: auto;
+    }
+    .imagenes-planetas img{
+        width: 100%;
+        height: auto;
+    }
+    .par{
+        order: 1;
+    }
+}
+@media (max-width:600px){
+    .section-start{
+        height: 100vh;
+    }
+    .nombre,.pregunta{
+        text-align: center;
+        font-size: 70px;
+    }
+    .paragraph h2{
+        font-size: 40px;
+    }
+    .section-info-mundos h2{
+        font-size: 30px;
+    }
+}
+@media (max-width:400px){
+    .nombre,.pregunta{
+        text-align: center;
+        font-size: 50px;
+        padding: 0 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.footerContainer{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer{
+    background-color: #24262B;
+    padding: 80px 0;
+    margin-top: 50px;
+}
+
+.footerRow{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footerLinks{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footerLinks h4{
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 500p;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footerLinks ul li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #BBBBBB;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.footerLinks ul li a:hover{
+    color: #FFFFFF;
+    padding-left: 6px;
+}
+
+.social-link a{
+    display: inline-block;
+    min-height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    transition: all .5s ease;
+}
+
+.social-link a:hover{
+    background-color: #00C3FF;
+}
+
+@media (max-width: 700px) {
+    
+    .seccion1 {
+        background-color: red;
+        flex-direction: column;
+        align-items: center;
+        height: 1300px;
+        max-width:none;
+    }
+
+    .cards {
+        width: 80%;
+    }
+
+    .formulario,
+    .articleLinks {
+        width: 90%;
+    }
+
+    .logos {
+        flex-direction: column;
+    }
+
+    .logos a {
+        padding: 10px 0;
+    }
+
+    .footerRow{
+        text-align: center;
+    }
+
+    .footerLinks{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}

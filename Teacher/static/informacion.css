@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.principal-container {
+    padding-top: 5em; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ca5774;
+    z-index: 1000; 
+}
+
+.navbar .logo {
+    flex: 1;
+    font-size: 40px;
+    user-select: none;
+    color: white;
+}
+.navbar .options{
+    margin: 0 25px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .8s ease;
+    color: #ffffff;
+}
+.navbar .options:hover {
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+}
+.register, .login{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.register img, .login img{
+    width: 35px;
+    height: auto;
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.table-container {
+    margin-top: 2em;
+    width: 90%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+.table-container th:hover {
+    background-color: #9b2542;
+    color: white;
+    font-weight: bold;
+}
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.table-container th, 
+.table-container td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.table-container th {
+    background-color: #ca5774;
+    color: white;
+    font-weight: bold;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container tr:hover {
+    background-color: #f1f1f1;
+    cursor: default;
+}

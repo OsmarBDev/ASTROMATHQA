@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'resultados/final-nivel.css' %}">
+    <link rel="stylesheet" href="{% static 'resultados/loginResultado.css' %}">
+    <link rel="stylesheet" href="{% static 'resultados/ejercicio.css' %}">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="result-box" class="result-box" >
+        <div class="stars-back">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <h1 class="phrase"></h1>
+        <img src="" alt="emotional-image" class="emotional-image">
+        <div class="stars">
+            <img src="{% static 'images/star-score.svg' %}" alt="star-score" class="star-score">
+            <img src="{% static 'images/star-score.svg' %}" alt="star-score" class="star-score">
+            <img src="{% static 'images/star-score.svg' %}" alt="star-score" class="star-score">
+            <img src="{% static 'images/star-score.svg' %}" alt="star-score" class="star-score">
+            <img src="{% static 'images/star-score.svg' %}" alt="star-score" class="star-score">
+        </div>
+        <p id="time-taken"></p>
+        
+        <div class="result-buttons">
+            <button class="option-button" id="button-exit">Salir</button>
+            <button class="option-button" id="button-reload">Reiniciar</buttton>
+        </div>
+        <div id="confirm-exit" style="display: none;" class="exit-confirmation">
+            <p>¿Quieres salir del nivel?</p>
+            <div class="confirmation-buttons">
+                <button class="option-button" id="exit-confirmed">Salir</button>
+                <button class="option-button" id="continue-level">Continuar</button>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const SumaUrl = "{% url 'Student:Suma' %}"
+    const RestaUrl = "{% url 'Student:Resta' %}"
+    const MultiplicacionUrl = "{% url 'Student:Multiplicacion' %}"
+    const pantallaMundos = "{% url 'Student:Mundos' %}"
+    const bueno = "{% static 'images/Good-Score.png' %}";
+    const intermedio = "{% static 'images/Middle-Score.png' %}"
+    const malo = "{% static 'images/Bad-Score.png' %}"
+</script>
+<script src="{% static 'resultados/final-nivel.js' %}"></script>
+</html>

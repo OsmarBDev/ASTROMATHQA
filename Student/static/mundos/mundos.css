@@ -1,0 +1,520 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw;
+    font-family: Arial, sans-serif;
+    background-color: #111; 
+    color: #fff;
+}
+
+.container{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0 4px;
+    border-radius: 50%;
+   
+    animation: animate 250s linear infinite;
+    animation-duration: calc(80s / var(--i));
+    
+}
+
+.bubbles-aqua {
+    box-shadow: 0 0 0 10px #e009d6a1,
+    0 0 50px rgb(243, 7, 212),
+    0 0 100px rgb(243, 7, 212);
+    background-color: rgb(243, 7, 212);
+}
+
+.bubbles-aqua:nth-child(even) {
+    box-shadow: 0 0 0 10px #17ddf744,
+    0 0 50px aqua,
+    0 0 100px aqua;
+    background-color: aqua;
+}
+
+.bubbles-green {
+    box-shadow: 0 0 0 10px rgb(4, 60, 112),
+    0 0 50px #0319e4,
+    0 0 100px #1403a8;
+    background-color: rgb(37, 29, 105);
+}
+
+.bubbles-green:nth-child(even) {
+    box-shadow: 0 0 0 10px #ada20544,
+    0 0 50px #944a04,
+    0 0 100px #944a04;
+    background-color: #944a04;
+}
+
+.bubbles-grey {
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #494948,
+    0 0 100px #575756;
+    background-color: rgb(0, 0, 0); 
+}
+
+.bubbles-grey:nth-child(even) {
+    box-shadow: 0 0 0 10px #6d00fc44,
+    0 0 50px #6b01b3,
+    0 0 100px #6b01b3;
+    background-color: rgb(91, 6, 139); 
+}
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.main-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.nombre-mundo{
+    font-size: 40px;
+    transition: all .5s ease;
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%; 
+    height: 600px;
+    gap: 20px; 
+}
+
+.imagen {
+    transition: all 0.6s ease, opacity 0.6s ease;
+    width: 250px; 
+    opacity: 0;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-150px); }
+}
+
+#planeta-restas {
+    transform: rotate(50deg); 
+    
+}
+#planeta-restas.activa{
+    transform: rotate(50deg) scale(1.5);
+   
+}
+
+.imagen.activa {
+    transform: translateX(0) scale(1.5); 
+    width: 350px;
+    opacity: 1;
+    z-index: 2;
+   /* animation: flotar 3s ease-in-out infinite;  */
+}
+
+
+.imagen.siguiente {
+    transform: translateX(200px) scale(1.1);
+    width: 250px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.imagen.anterior {
+    transform: translateX(-200px) scale(1.1);
+    width: 250px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.imagen.inactiva {
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.izquierda{
+    display: none;
+}
+
+.button-choose{
+    width: 300px;
+    height: 70px;
+    font-size: 40px;
+    border-radius: 25px;
+    transition: all .5s ease;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.button-choose:hover{
+    cursor: pointer;
+}
+
+.button-choose.first-world{
+    background-color: rgb(182, 13, 140);
+    color: aqua;
+}
+.button-choose.first-world:hover{
+    background-color: rgb(255, 17, 223);
+}
+
+.button-choose.second-world{
+    background-color: rgb(129, 56, 7);
+    color: rgb(12, 14, 107);
+}
+.button-choose.second-world:hover{
+    background-color: rgb(199, 87, 12);
+    color: rgb(23, 25, 184);
+}
+
+.button-choose.third-world{
+    background-color: rgb(101, 10, 187);
+    color: rgb(107, 110, 110);
+}
+.button-choose.third-world:hover{
+    background-color: rgb(124, 9, 231);
+    color: #fefefe;
+}
+@media (max-width:690px) {
+    .nombre-mundo{
+        font-size: 28px;
+        text-align: center;
+    }
+}
+@media (max-width: 1080px) {
+    .carrusel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        overflow: hidden; 
+    }
+
+    .imagen {
+        display: none; 
+    }
+
+    .imagen.activa {
+        display: block; 
+        transform: translateX(0) scale(0.8);
+        width: 300px; 
+        transition: all 0.6s ease; 
+        pointer-events: none;
+    }
+    .flecha {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .flecha.izquierda {
+        left: 10px;
+    }
+
+    .flecha.derecha {
+        right: 10px;
+    }
+    .button-choose{
+        width: 50%;
+        height: 60px;
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+}
+
+
+
+
+
+
+/*Niveles*/
+.niveles-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; 
+    z-index: 9; 
+}
+
+.niveles {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    height: 70%;
+    background-color: transparent;
+    border: 5px solid white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    z-index: 10; 
+    overflow: visible; 
+}
+
+
+.niveles .nivel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    height: 100%;
+}
+
+.niveles .nivel div {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+main.desenfocado {
+    opacity: 0.3;
+}
+
+/* Estilos para cada cuadro de nivel */
+.nivel-cuadro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.5s ease; 
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.nivel-cuadro:hover {
+    border-color: #3cb371; 
+}
+
+.nivel-cuadro:nth-child(-n+5):hover {
+    border: 5px solid;
+    border-color: #a5ff01;
+    background-color: #a5ff01;
+}
+
+.nivel-cuadro:nth-child(n+6):nth-child(-n+10):hover {
+    border: 5px solid;
+    border-color: yellow;
+    background-color: yellow;
+}
+.nivel-cuadro:nth-child(n+6):nth-child(-n+10):hover .nivel-numero, 
+.nivel-cuadro:nth-child(n+6):nth-child(-n+10):hover .nivel-tiempo{
+    color: #111;
+}
+.nivel-cuadro:nth-child(n+11):nth-child(-n+15):hover {
+    border: 5px solid;
+    border-color: red;
+    background-color: red;
+}
+.nivel-numero {
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    margin: 5px 0;
+    user-select: none;
+}
+
+.nivel-tiempo {
+    font-size: 20px;
+    color: white;
+    margin: 5px 0;
+    user-select: none;
+}
+
+.nivel-estrellas {
+    display: flex;
+    gap: 3px;
+    user-select: none;
+    
+}
+
+.estrella {
+    width: 40px; 
+    height: auto;
+    user-select: none;
+}
+
+.estrella:nth-child(even){
+    margin-top: 15px;
+}
+.estrella:nth-child(3){
+    margin-top: 25px;
+}
+
+/* Título del mundo */
+.titulo-mundo {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 5px 15px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    color: #111;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    user-select: none;
+}
+
+@media (max-width: 1500px) {
+    .niveles .nivel {
+        grid-template-columns: repeat(4, 1fr); 
+        overflow-y: auto; 
+    }
+}
+
+@media (max-width: 1215px) {
+    .niveles .nivel {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    .niveles{
+        padding-top: 60px;
+    }
+}
+
+
+@media (max-width: 920px) {
+    .niveles .nivel {
+        grid-template-columns: repeat(2, 1fr);
+        overflow-y: auto; 
+    }
+    .niveles{
+        padding-top: 60px;
+    }
+}
+
+
+@media (max-width: 620px) {
+    .niveles .nivel {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
+    .titulo-mundo{
+        width: 350px;
+    }
+    .niveles{
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 375px) {
+    .titulo-mundo{
+        width: 250px;
+    }
+    .niveles {
+        height: 70%;
+        width: 80%; 
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+    }
+    
+    .nivel-cuadro {
+        height: calc(90vh / 3); 
+        width: 90%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; 
+    }
+    
+    .nivel-estrellas {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .estrella {
+        width: 15%;
+        height: auto;
+    }
+    
+}
+
+
+
+/* Estilo para la imagen */
+.imagen-esquina {
+    position: fixed;    /* Fija la imagen en la ventana */
+    top: 10px;       /* 10px desde la parte inferior */
+    right: 10px;        /* 10px desde la parte derecha */
+    width: 3vw;         /* 5% del ancho de la ventana */
+    height: auto;       /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea redonda (opcional) */
+    z-index: 1000;      /* Asegura que esté encima de otros elementos */
+}
+.imagen-esquina-salir {
+    position: fixed;    /* Fija la imagen en la ventana */
+    top: 10px;       /* 10px desde la parte inferior */
+    right:70px;        /* 10px desde la parte derecha */
+    width: 3vw;         /* 5% del ancho de la ventana */
+    height: auto;       /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea redonda (opcional) */
+    z-index: 1000;      /* Asegura que esté encima de otros elementos */
+}
+/* Responsividad: hacer la imagen aún más pequeña en pantallas pequeñas */
+@media (max-width: 600px) {
+    .imagen-esquina {
+        width: 8vw;   /* Un poco más grande en pantallas más pequeñas */
+        bottom: 5px;   /* Mueve un poco más cerca del borde inferior */
+        right: 5px;    /* Mueve un poco más cerca del borde derecho */
+    }
+}
+.close-sesion{
+    margin-top: 0;
+    text-align: center;
+}
+
+

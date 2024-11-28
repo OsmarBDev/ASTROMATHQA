@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ejercicio-sumas/ejercicio.css' %}">
+    <link rel="stylesheet" href="{% static 'ejercicio-multiplicaciones/tabla-multiplicar.css' %}">
+    <title>Document</title>
+</head>
+<body class="body">
+    <div id="particles-js">
+    
+
+    </div>
+    <main class="principal-container">
+        <div class="header">
+            <div class="question-counter">1/5</div>
+            <div class="exit-button">X</div>
+        </div>
+        <div class="mostrar">
+            <div class="question" id="question"></div>
+            <div class="answers" id="answers">
+                <div class="option" id="option1"></div>
+                <div class="option" id="option2"></div>
+                <div class="option" id="option3"></div>
+                <div class="option" id="option4"></div>
+            </div>
+        </div>
+        <div class="pizarra-container" class="mostrar">
+            <div class="toolbar">
+                <button class="color-button" data-color="#FF0000" style="background-color: #FF0000;"></button>
+                <button class="color-button" data-color="#000000" style="background-color: #000000;"></button>
+                <button class="color-button" data-color="#0000FF" style="background-color: #0000FF;"></button>
+                <button class="eraser-button" style="background-color: #FFFFFF;">🧽</button>
+            </div>
+            <canvas id="pizarra" width="800" height="400"></canvas>
+            <div id="eraser-cursor"></div>
+        </div>
+
+        <section class="tablas-multiplicar">
+            <div class="titulo-multiplicar">COMPLETA LA TABLA</div>
+            <div class="tabla-container" id="tabla-container"></div>
+            <div class="respuestas-container" id="respuestas-container"></div>
+            <button class="next-problem">Aceptar</button>
+        </section>
+        
+        
+    </main>
+
+    
+
+    <div id="confirm-exit" style="display: none;" class="exit-confirmation">
+        <p>¿Quieres salir del nivel?</p>
+        <div class="confirmation-buttons">
+            <button class="option-button" id="exit-confirmed">Salir</button>
+            <button class="option-button" id="continue-level">Continuar</button>
+        </div>
+    </div>
+</body>
+<script>
+    const pantallaMundos = "{% url 'Student:Mundos' %}"
+</script>
+<script src="{% static 'ejercicio-sumas/particles.min.js' %}"></script>
+<script src="{% static 'ejercicio-sumas/particlesjs-config.json' %}"></script>
+
+<script src="{% static 'ejercicio-multiplicaciones/ejercicio-multiplicaciones.js' %}"></script>
+</html>

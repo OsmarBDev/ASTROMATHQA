@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'mundos/mundos.css' %}">
+    <title>Document</title>
+</head>
+<body class="body">
+  <a href="{% url 'Student:Perfil' %}">
+    <img src="{% static 'images/Perfil.svg' %}" alt="Imagen en la esquina" class="imagen-esquina">
+  </a>
+    <main class="main-container">
+        <div class="container">
+            <div class="bubbles">
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+        
+            </div>
+        </div>
+        <h1 class="titulo">Selecciona un planeta</h1>
+        <h2 class="nombre-mundo"></h2>
+        <div class="carrusel">
+            <button class="flecha izquierda">&lt;</button>
+            <div class="imagen-container"><img src="{% static  'images/Mundo-Sumas.png' %}" alt="Planeta 1" class="imagen activa"></div>
+            <div class="imagen-container"><img src="{% static  'images/mundo-restas.png' %}" class="imagen siguiente" id="planeta-restas"></div>
+            <div class="imagen-container"><img src="{% static  'images/Mundo-Multiplicaciones.png' %}" alt="Planeta 3" class="imagen inactiva"></div>
+            
+            <button class="flecha derecha">&gt;</button>
+        </div>
+        
+        <button class="button-choose">Elegir</button>
+    </main>
+
+    <div class="niveles-overlay"></div>
+    <section class="niveles">
+      <div class="titulo-mundo"></div>
+      <div class="nivel">
+        
+      </div>
+    </section>
+  <script src="{% static 'mundos/mundos.js' %}"></script>
+  <script>
+    const estrellaAmarilla = "{% static 'images/estrella-celeste.svg' %}";
+    const estrellaGris = "{% static 'images/estrellaGris.svg' %}";
+    function clickEjercicio() {
+      document.querySelectorAll('.hab').forEach((nivel) => {
+        nivel.addEventListener('click', () => {
+            const numeroNivel = parseInt(nivel.querySelector('.nivel-numero').textContent);
+            localStorage.setItem('nivelSeleccionado', numeroNivel);
+            
+            const tituloMundo = document.querySelector('.titulo-mundo').textContent; 
+            localStorage.setItem('titulo-mundo', tituloMundo);
+      
+            if(tituloMundo==='Mundo de las Sumas'){
+              window.location.href = "{% url 'Student:Suma' %}";
+            }else if(tituloMundo==='Mundo de las Restas'){
+              window.location.href = "{% url 'Student:Resta' %}";
+            }else{
+              window.location.href = "{% url 'Student:Multiplicacion' %}"
+            }
+        });
+      });
+    }
+    
+  </script>
+  
+</body>
+</html>

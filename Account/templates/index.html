@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index/index.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="icon" href="{% static 'images/AstroMath.png' %}">
+    <title>AstroMath</title>
+</head>
+<body>
+    <div id="particles-js">
+        
+    </div>
+    <main class="principal-container">
+        
+        <nav class="navbar">
+            <div class="logo">AstroMath</div>
+            
+            <div class="options login">
+                <img src="../resources/add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle-svgrepo-com.svg" alt="sign-in-register-svgrepo-com">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'Logout' %}">Cerrar Sesion</a> 
+                {% else %}
+                    <a href="{% url 'Login' %}">Iniciar Sesion</a>
+                {% endif %}
+            </div>
+        </nav>
+        
+        <section class="section-start">
+            <div class="nombre">
+                <img src="{% static 'images/AstroMath.png' %}" alt="AstroMath">
+            </div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'Student:Mundos' %}"><button class="button-start">Empezar ahora</button></a> 
+            {% else %}
+                <a href="{% url 'Login' %}"><button class="button-start">Empezar ahora</button></a>
+            {% endif %}
+            
+            <div class="mas-info">Mas informacion abajo</div>
+        </section>
+        <div class="pregunta">¿Qué contiene?</div>
+        <section class="section-info-mundos">
+            <h2>Prueba los 3 mundos que tenemos</h2>
+            <div class="imagenes-planetas">
+                <img src="{% static 'images/info-sumas.png' %}" alt="planeta-sumas">
+                <img src="{% static 'images/info-restas.png' %}" alt="planeta-restas">
+                <img src="{% static 'images/info-multiplicaciones.png' %}" alt="planeta-multiplicaciones">
+            </div>
+        </section>
+        <div class="pregunta">¿Qué juegos tenemos?</div>
+        <section class="section-information">
+            <div class="paragraph">
+                <h2>Elije la respuesta correcta</h2>
+                <p>
+                    Este es el juego principal en todos los mundos, lo que tienes
+                    que hacer es ver la pregunta en el cuadro grande y presionar la respuesta correcta
+                    de las 4 que tienes disponibles.
+                </p>
+            </div>
+            <div class="information-prueba-principal information" ></div>
+        </section>
+
+        <section class="section-information">
+            <div class="information-prueba-sumas information par"></div>
+            <div class="paragraph">
+                <h2>Completa la cantidad</h2>
+                <p>
+                    Este juego es simple, te darán un numero y tendras que poner esa cantidad
+                    de misiles dentro del cuadrado blanco.
+                    Los misiles puedes sacarlos de ese contenedor de misiles arriba del cuadrado,
+                    solo basta con hacer un click para agarrar un misil y otro click para soltarlo.
+                    Una vez puestos todos los misiles que te pidieron dale click al boton de aceptar para
+                    ver si realizaste el juego correctamente.
+                    Pero ten cuidado, una vez puesto un misil ya no podrás sacarlo.
+                    
+                </p>
+            </div>
+        </section>
+
+        <section class="section-information">
+            <div class="paragraph">
+                <h2>Completa la cantidad, variante 2</h2>
+                <p>
+                    Este juego es similar al anterior, pertenece al mundo de las restas,
+                    aquí tendrás una cantidad de misiles en el primer cuadro y otra cantidad en el segundo,
+                    lo que tienes que hacer es restar la cantidad de misiles del cuadro 2 del cuadro 1.
+                    Una vez que tengas la respuesta deberás colocar el la cantidad de misiles como resultado en el cuadrado
+                    de la derecha, igualmente sacando los imsiles del contenedor de misiles que tiene arriba.
+                </p>
+            </div>
+            <div class="information-prueba-restas information"></div>
+        </section>
+    
+        <section class="section-information">
+            <div class="information-prueba-principal-multiplicaciones information par"></div>
+            <div class="paragraph">
+                <h2>Elije la respuesta correcta, variante 2</h2>
+                <p>
+                    El mundo de las multiplicaciones puede llegar a complicarse, seguro necesitarás ayuda
+                    para realizar los ejercicios, es por eso que para esta seccion ofrecemos una pizarra en la
+                    cual podrás escribir el procedimiento de los ejercicios y asi no perderte.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-information">
+            <div class="paragraph">
+                <h2>Completa la tabla de multiplicar</h2>
+                <p>
+                    Otro juego del mundo de las multiplicaciones, este es sencillo, tienes que completar la tabla
+                    de multiplicacion de un numero al azar que te saldrá, las opciones las tienes abajo, solo basta con
+                    dar click en alguna opcion y luego otro click en el cuadro que tu decidas, si crees que te equivocaste
+                    solo hazle click a la respuesta ya puesta y volverá abajo.
+                    Pero ten cuidado, necesitas responder todo correctamente para recibir una estrella.
+                </p>
+            </div>
+            <div class="information-prueba-multiplicaciones information"></div>
+        </section>
+        <div class="pregunta">¿Cómo funciona un nivel?</div>
+        <section class="section-info-mundos">
+            <h2 style="text-align: center;">Cada nivel consta de 5 preguntas<br>
+                y podrás obtener un puntaje en base<br>
+                a tus respuestas correctas
+            </h2>
+            <div class="imagenes-puntajes">
+                <img src="{% static 'images/mal-puntaje.png' %}" alt="planeta-sumas">
+                <img src="{% static 'images/medio-puntaje.png' %}" alt="planeta-restas">
+                <img src="{% static 'images/buen-puntaje.png' %}" alt="planeta-multiplicaciones">
+            </div>
+        </section>
+    </main>
+    <script src="{% static 'index/particles.min.js' %}"></script>
+    <script src="{% static 'index/particlesjs-config.json' %}"></script>
+    <script src="{% static 'index/index.js' %}"></script>
+</body>
+<footer class="footer">
+    <div class="footerContainer">
+        <div class="footerRow">
+            <div class="footerLinks">
+                <h4>Sobre nosotros</h4>
+                <ul>
+                    <li><a href="#">Mision</a></li>
+                    <li><a href="#">Vision</a></li>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+            <div class="footerLinks">
+                <h4>Ayuda y soporte</h4>
+                <ul>
+                    <li><a href="#">Aplicacion móvil</a></li>
+                    <li><a href="#">Tutoriales</a></li>
+                    <li><a href="#">Reportar un error</a></li>
+                    <li><a href="#">Estado</a></li>
+                    <li><a href="#">Informacion básica</a></li>
+                </ul>
+            </div>
+            <div class="footerLinks">
+                <h4>Términos y privacidad</h4>
+                <ul>
+                    <li><a href="#">Normas de la comunidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footerLinks">
+                <h4>Encuentranos en nuestras redes sociales</h4>
+                <div class="social-link">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</footer>
+    <script src="{% static 'login/index.js' %}"></script>
+</html>
