@@ -23,6 +23,7 @@ def showLogin(request):
                 extra_info = models.Profile.objects.get(user=user)
                 print(extra_info.tipo)
                 if(extra_info.tipo == 2):
+                    login(request, user)
                     return redirect("Teacher:list")
                 else:
                     login(request, user)

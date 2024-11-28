@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Account.decorators import role_required  # Importar el decorador
+from Account.decorators import role_required
 
 @role_required('Profesor')
 def showList(request):
