@@ -11,7 +11,7 @@ const tituloMundo = document.querySelector('.titulo-mundo');
 
 document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("popstate", function(event) {
-      window.location.href = "http://127.0.0.1:8000";
+      window.location.href = pantallaIndex;
     });
     history.pushState(null, null, window.location.href);
 });
