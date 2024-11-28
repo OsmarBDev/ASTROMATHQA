@@ -14,7 +14,10 @@
     </div>
     <nav class="navbar">
         <div class="logo"><a href="{% url 'Student:Mundos' %}">VOLVER AL MENÚ PRINCIPAL</a></div>
-        <a href="./index.html">CERRAR SESION</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'Logout' %}">CERRAR SESION</a>
+        {% endif %}
+        
     </nav>
     <div class="flip-card">
         <div class="flip-card-inner">
