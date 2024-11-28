@@ -187,23 +187,9 @@
     </div>
     
 </footer>
-    <script src="{% static 'index/index.js' %}"></script>
-    <script src="{% static 'index/particles.min.js' %}"></script>
     <script>
-        const urlParticles = "{% static 'index/particlesjs-config.json' %}"
-        fetch(urlParticles)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Error al cargar JSON: ${response.statusText}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.log('JSON cargado:', data);
-            particlesJS.load('particles-js', data, function () {
-              console.log('Particles.js configurado con éxito');
-            });
-          })
-          .catch((err) => console.error('Error al cargar JSON:', err));
+        particlesJS.load('particles-js', '{% static "index/particlesjs-config.json" %}', function () {
+            console.log('Particles.js configurado con éxito');
+          });
       </script>
 </html>
