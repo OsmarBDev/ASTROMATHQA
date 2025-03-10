@@ -132,6 +132,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-212d.up.railway.app',
+]
+CSRF_COOKIE_SECURE = True  # Si usas HTTPS
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
